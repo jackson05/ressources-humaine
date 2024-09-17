@@ -30,8 +30,7 @@ public class ServicesService {
     
     public Services updateServices(int id, Services services) {
     	Services oldServices = servicesRepository.findById(id).orElse(null);
-    	oldServices.setDesignationServices(services.getDesignationServices());
-    	oldServices.setDepartementServiceId(services.getDepartementServiceId());
+    	oldServices.setDesignationServices(services.getDesignationServices()); 
     	oldServices.setUserModifiedServices(services.getUserModifiedServices());
     	oldServices.setDateModifiedServices(services.getDateModifiedServices()); 
     	servicesRepository.save(oldServices);

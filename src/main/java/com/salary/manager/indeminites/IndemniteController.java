@@ -31,7 +31,7 @@ public class IndemniteController {
 		return indemniteService.getById(id);
 	}
 	
-	@RequestMapping(value = "/indemnite/ids", method = RequestMethod.GET)
+	@RequestMapping(value = "/indemnite/deleteList", method = RequestMethod.GET)
 	public List<Indemnite> getListById(@RequestBody List<Integer> ids){
 		return indemniteService.getAllIndemnitesByListId(ids);
 	}
@@ -51,7 +51,7 @@ public class IndemniteController {
 		indemniteService.deleteIndemnite(id);
 	}
 	
-	@RequestMapping(value = "/indemnite/deleteAllIds", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/indemnite/deleteList", method = RequestMethod.DELETE)
 	public void deleteByListId(@RequestBody List<Integer> ids) {
 		indemniteService.deleteSpecificIndeminite(ids);
 	}

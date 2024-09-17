@@ -12,9 +12,6 @@ public class Services {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id; 
-	 
-	private int departementServiceId;
-	
 	private String designationServices;
 	private int userCreatedServices;
 	private int userModifiedServices;
@@ -34,8 +31,7 @@ public class Services {
 		this.userCreatedServices = services.getUserCreatedServices();
 		this.userModifiedServices = services.getUserModifiedServices();
 		this.dateCreatedServices = services.getDateCreatedServices();
-		this.dateModifiedServices = services.getDateModifiedServices();
-		this.departementServiceId = services.getDepartementServiceId();
+		this.dateModifiedServices = services.getDateModifiedServices(); 
 	}
 
 
@@ -43,17 +39,6 @@ public class Services {
 		return id;
 	}
  
-    
-	
-	public int getDepartementServiceId() {
-		return departementServiceId;
-	}
-
-
-	public void setDepartementServiceId(int departementServiceId) {
-		this.departementServiceId = departementServiceId;
-	}
-
 
 	public void setId(int id) {
 		this.id = id;

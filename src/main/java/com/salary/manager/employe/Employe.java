@@ -1,10 +1,21 @@
 package com.salary.manager.employe;
-
+ 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id; 
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.salary.manager.agences.Agence;
+import com.salary.manager.banque.Banque;
+import com.salary.manager.categorie.Categorie;
+import com.salary.manager.fonction.Fonction;
+import com.salary.manager.level.Level;
+import com.salary.manager.service.Services;
+ 
 
 @Entity() 
 public class Employe {
@@ -19,8 +30,10 @@ public class Employe {
 	
 	private String genre;
 	private String etatCivile;
-	 
-	private int levelId;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Level level;
 	private String conjointFonction;
 	
 	private String telephone;
@@ -29,12 +42,26 @@ public class Employe {
 	private int nombreDenfant;
 	
 	private float salaireDeBase;
-	 
-	private int serviceId;
-	private int fonctionId;
-	private int agenceId;
-	private int categorieId; 
-	private int banqueId;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Services service;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Fonction fonction;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Agence agence;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Categorie categorie; 
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	private Banque banque;
 	
 	private String compte;
 	private String dateEmbauche;
@@ -59,18 +86,18 @@ public class Employe {
 		this.anneeNaissance = employee.getAnneeNaissance();
 		this.genre = employee.getGenre();
 		this.etatCivile = employee.getEtatCivile();
-		this.levelId = employee.getLevelId();
+		this.level = employee.getLevel();
 		this.conjointFonction = employee.getConjointFonction();
 		this.telephone = employee.getTelephone();
 		this.email = employee.getEmail();
 		this.matriculeInss = employee.getMatriculeInss();
 		this.nombreDenfant = employee.getNombreDenfant();
 		this.salaireDeBase = employee.getSalaireDeBase();
-		this.serviceId = employee.getServiceId();
-		this.fonctionId = employee.getFonctionId();
-		this.agenceId = employee.getAgenceId();
-		this.categorieId = employee.getCategorieId();
-		this.banqueId = employee.getBanqueId();
+		this.service = employee.getService();
+		this.fonction  = employee.getFonction();
+		this.agence = employee.getAgence();
+		this.categorie = employee.getCategorie();
+		this.banque = employee.getBanque();
 		this.compte = employee.getCompte();
 		this.dateEmbauche = employee.getDateEmbauche();
 		this.dateCreated = employee.getDateCreated();
@@ -87,66 +114,6 @@ public class Employe {
 	}
 
 	
-	public int getLevelId() {
-		return levelId;
-	}
-
-
-	public void setLevelId(int levelID) {
-		this.levelId = levelID;
-	}
-
-
-	public int getServiceId() {
-		return serviceId;
-	}
-
-
-	public void setServiceId(int serviceId) {
-		this.serviceId = serviceId;
-	}
-
-
-	public int getFonctionId() {
-		return fonctionId;
-	}
-
-
-	public void setFonctionId(int fonctionId) {
-		this.fonctionId = fonctionId;
-	}
-
-
-	public int getAgenceId() {
-		return agenceId;
-	}
-
-
-	public void setAgenceId(int agenceId) {
-		this.agenceId = agenceId;
-	}
-
-
-	public int getCategorieId() {
-		return categorieId;
-	}
-
-
-	public void setCategorieId(int categorieId) {
-		this.categorieId = categorieId;
-	}
-
-
-	public int getBanqueId() {
-		return banqueId;
-	}
-
-
-	public void setBanqueId(int banqueId) {
-		this.banqueId = banqueId;
-	}
-
-
 	public void setAnneeNaissance(int anneeNaissance) {
 		this.anneeNaissance = anneeNaissance;
 	}
@@ -318,4 +285,65 @@ public class Employe {
 	public void setEtat(int etat) {
 		this.etat = etat;
 	}
+
+
+	public Level getLevel() {
+		return level;
+	}
+
+
+	public void setLevel(Level level) {
+		this.level = level;
+	}
+
+
+	public Services getService() {
+		return service;
+	}
+
+
+	public void setService(Services service) {
+		this.service = service;
+	}
+
+
+	public Fonction getFonction() {
+		return fonction;
+	}
+
+
+	public void setFonction(Fonction fonction) {
+		this.fonction = fonction;
+	}
+
+
+	public Agence getAgence() {
+		return agence;
+	}
+
+
+	public void setAgence(Agence agence) {
+		this.agence = agence;
+	}
+
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+
+	public Banque getBanque() {
+		return banque;
+	}
+
+
+	public void setBanque(Banque banque) {
+		this.banque = banque;
+	}
+	
 }

@@ -7,19 +7,115 @@
 <body>
 	<h1>Liste des api disponible</h1>
 	<ol>
-		<li><a href="/agence">GET /agence</a></li>
-		<li><a href="/agence/id/2">GET /agence/id/{int}</a></li>
+		<li><a href="/agence">GET All /agence</a></li>
+		<li><a href="/agence/id/2">GET agence by id /agence/id/{int}</a></li>
+		<li><a href="/agence/name/buja">GET agence by name /agence/name/{name}</a></li>
 		<li><a href="/agence">POST /agence</a></li>
-
+		<li><a href="/agence/2">PUT modification agence /agence/{id}</a></li>
+        <li><a href="/agence/2">DELETE suppression agence /agence/{id}</a></li>
+	</ol>
+	<hr/>
+	<ol>
+		<li><a href="/assurance">GET All /assurance</a></li>
+		<li><a href="/assurance/id/2">GET assurance by id /assurance/id/{int}</a></li>
+		<li><a href="/assurance/name/bicor">GET assurance by name /assurance/name/{name}</a></li>
+		<li><a href="/assurance">POST /assurance</a></li>
+		<li><a href="/assurance/2">PUT modification assurance /assurance/{id}</a></li>
+        <li><a href="/assurance/2">DELETE suppression assurance /assurance/{id}</a></li>
 	</ol>
 	<hr/>
 	
 	<ol>
-		<li><a href="/employe">GET /employee</a></li>
-		<li><a href="/employe/2">GET /employe/{int}</a></li>
-		<li><a href="/employe">POST /employe</a></li>
+		<li><a href="/banque">GET All /banque</a></li>
+		<li><a href="/banque/id/2">GET banque by id /banque/id/{int}</a></li>
+		<li><a href="/banque/name/brb">GET banque by name /banque/name/{designationBanque}</a></li>
+		<li><a href="/banque">POST /banque</a></li>
+		<li><a href="/banque/2">PUT modification banque /banque/{id}</a></li>
+        <li><a href="/banque/2">DELETE suppression banque /banque/{id}</a></li>
+	</ol>
+	<hr/>
+	
+	<ol>
+		<li><a href="/categorie">GET All /categorie</a></li>
+		<li><a href="/categorie/id/2">GET categorie by id /categorie/id/{int}</a></li>
+		<li><a href="/categorie/name/brb">GET categorie by name /categorie/name/{designationCategorie}</a></li>
+		<li><a href="/categorie">POST /categorie</a></li>
+		<li><a href="/categorie/2">PUT modification categorie /categorie/{id}</a></li>
+        <li><a href="/categorie/2">DELETE suppression categorie /categorie/{id}</a></li>
+	</ol>
+	<hr/>
+	
+	<ol>
+		<li><a href="/contributionsocial">GET All /contributionsocial</a></li>
+		<li><a href="/contributionsocial/id/2">GET contributionsocial by id /contributionsocial/id/{int}</a></li>
+		<li><a href="/contributionsocial/name/iris">GET contributionsocial by name /contributionsocial/name/{name}</a></li>
+		<li><a href="/contributionsocial">POST /contributionsocial</a></li>
+		<li><a href="/contributionsocial/2">PUT modification contributionsocial /contributionsocial/{id}</a></li>
+        <li><a href="/contributionsocial/2">DELETE suppression contributionsocial /contributionsocial/{id}</a></li>
+        <li><a href="/contributionsocial/deleteList">DELETE suppression List of contributionsocial /contributionsocial/deleteList</a></li>
+        <li><a href="/contributionsocial/deleteAll">DELETE suppression All contributionsocial /contributionsocial/deleteAll</a></li>
+	</ol>
+	<hr/>
+	
+	<ol>
+		<li><a href="/employe">GET Liste employe /employee</a></li>
+		<li><a href="/employe/2">GET un employe /employe/{int}</a></li>
+		<li><a href="/employeActifs">GET employe actif /employeActifs</a></li>
+		<li><a href="/employeMiseApied">GET employes mise a pied /employeMiseApied</a></li>
+		<li><a href="/employe">POST ajouter employe /employe</a></li>
+		<li><a href="/employe/2">PUT modifier employe /employe/{int}</a></li>
+		<li><a href="/employe/2">DELETE supprimer un employe /employe/{int}</a></li>
+		<li><a href="/employe/2">PUT mise a pied employe /employe/mp/{int}</a></li>
 
 	</ol>
-	
+	<hr/>
+		<ol>
+		<li><a href="/departement">GET All /departement</a></li>
+		<li><a href="/departement/id/2">GET departement by id /departement/id/{int}</a></li>
+		<li><a href="/departement/name/facturation">GET departement by name /departement/name/{designationDepartment}</a></li>
+		<li><a href="/departement">POST /departement</a></li>
+		<li><a href="/departement/2">PUT modification departement /departement/{id}</a></li>
+        <li><a href="/departement/2">DELETE suppression departement /departement/{id}</a></li>
+        
+	</ol>
+	<hr/>
+	<ol>
+		<li><a href="/fonction">GET All /fonction</a></li>
+		<li><a href="/fonction/id/2">GET fonction by id /fonction/id/{int}</a></li>
+		<li><a href="/fonction/name/facturation">GET fonction by name /fonction/name/{designationFonction}</a></li>
+		<li><a href="/fonction">POST /fonction</a></li>
+		<li><a href="/fonction/2">PUT modification fonction /fonction/{id}</a></li>
+        <li><a href="/fonction/2">DELETE suppression fonction /fonction/{id}</a></li>
+	</ol>
+	<hr/>
+	 <ol>
+		<li><a href="/indemnite">GET All /indemnite</a></li>
+		<li><a href="/indemnite/id/2">GET indemnite by id /indemnite/id/{int}</a></li>
+		<li><a href="/indemnite/name/facturation">GET indemnite by name /indemnite/name/{name}</a></li>
+		<li><a href="/indemnite">POST /indemnite</a></li>
+		<li><a href="/indemnite/2">PUT modification indemnite /indemnite/{id}</a></li>
+        <li><a href="/indemnite/2">DELETE suppression indemnite /indemnite/{id}</a></li>
+        <li><a href="/indemnite/deleteList">DELETE suppression List of indemnite /indemnite/deleteList</a></li>
+        <li><a href="/indemnite/deleteAll">DELETE suppression All  /indemnite/deleteAll</a></li>
+	</ol>
+	<hr/>
+	<ol>
+		<li><a href="/level">GET All /level</a></li>
+		<li><a href="/level/id/2">GET level by id /level/id/{int}</a></li>
+		<li><a href="/level/name/premier">GET level by name /level/name/{designationLevel}</a></li>
+		<li><a href="/level">POST /level</a></li>
+		<li><a href="/level/2">PUT modification level  /level/{id}</a></li>
+        <li><a href="/level/2">DELETE suppression level  /level/{id}</a></li>
+	</ol>
+	<hr/>
+	<ol>
+		<li><a href="/service">GET All /service</a></li>
+		<li><a href="/service/id/2">GET service by id /service/id/{int}</a></li>
+		<li><a href="/service/name/informatique">GET level by name /service/name/{designationServices}</a></li>
+		<li><a href="/service">POST /service</a></li>
+		<li><a href="/service/2">PUT modification service  /service/{id}</a></li>
+        <li><a href="/service/2">DELETE suppression level  /level/{id}</a></li>
+	</ol>
+	<hr/>
 </body>
 </html>

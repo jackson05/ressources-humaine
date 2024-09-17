@@ -51,19 +51,19 @@ public class EmployeService {
 //		EmployeBuckup entity = new EmployeBuckup(0, oldData);
 //		System.out.println(entity);
 		String miseAjour = "Update";
-		employesRepositorie.createIntoBuckup(oldData.getAgenceId(), oldData.getAnneeNaissance(), 
-				oldData.getBanqueId(), oldData.getCategorieId(), oldData.getCompte(), oldData.getConjointFonction(), oldData.getDateCreated(), oldData.getDateEmbauche(), 
-				oldData.getDateModified(), oldData.getEmail(), oldData.getEtat(), oldData.getEtatCivile(), oldData.getFonctionId(), oldData.getGenre(), oldData.getId(), oldData.getLevelId(), oldData.getMatricule(), 
-				oldData.getMatriculeInss(), oldData.getNom(), oldData.getNombreDenfant(), oldData.getPrenom(), oldData.getSalaireDeBase(), oldData.getServiceId(), oldData.getTelephone(), 
+		employesRepositorie.createIntoBuckup(oldData.getAgence(), oldData.getAnneeNaissance(), 
+				oldData.getBanque(), oldData.getCategorie(), oldData.getCompte(), oldData.getConjointFonction(), oldData.getDateCreated(), oldData.getDateEmbauche(), 
+				oldData.getDateModified(), oldData.getEmail(), oldData.getEtat(), oldData.getEtatCivile(), oldData.getFonction(), oldData.getGenre(), oldData.getId(), oldData.getLevel(), oldData.getMatricule(), 
+				oldData.getMatriculeInss(), oldData.getNom(), oldData.getNombreDenfant(), oldData.getPrenom(), oldData.getSalaireDeBase(), oldData.getService(), oldData.getTelephone(), 
 				oldData.getUserCreated(), oldData.getUserModified(), oldData.getVersion(), miseAjour);
 		oldData.setVersion(oldData.getVersion()+1);
 //		oldData.setId(0);
 		
-		oldData.setAgenceId(employe.getAgenceId());
+		oldData.setAgence(employe.getAgence());
 		oldData.setAnneeNaissance(employe.getAnneeNaissance());
-		oldData.setBanqueId(employe.getBanqueId());
+		oldData.setBanque(employe.getBanque());
 		
-		oldData.setCategorieId(employe.getCategorieId());
+		oldData.setCategorie(employe.getCategorie());
 		oldData.setCompte(employe.getCompte());
 		oldData.setConjointFonction(employe.getConjointFonction());
 		
@@ -82,10 +82,10 @@ public class EmployeService {
 		
 		oldData.setNombreDenfant(employe.getNombreDenfant());
 		oldData.setSalaireDeBase(employe.getSalaireDeBase());
-		oldData.setLevelId(employe.getLevelId());
+		oldData.setLevel(employe.getLevel());
 		
-		oldData.setAgenceId(employe.getAgenceId());
-		oldData.setServiceId(employe.getServiceId());
+		oldData.setAgence(employe.getAgence());
+		oldData.setService(employe.getService());
 		oldData.setTelephone(employe.getTelephone());
 		oldData.setUserModified(employe.getUserModified());
 		
@@ -97,10 +97,10 @@ public class EmployeService {
 		Employe oldData = employesRepositorie.findById(id).orElse(null);
 //		buck up first 
 		String miseAjour = "Delete";
-		employesRepositorie.createIntoBuckup(oldData.getAgenceId(), oldData.getAnneeNaissance(), 
-				oldData.getBanqueId(), oldData.getCategorieId(), oldData.getCompte(), oldData.getConjointFonction(), oldData.getDateCreated(), oldData.getDateEmbauche(), 
-				oldData.getDateModified(), oldData.getEmail(), oldData.getEtat(), oldData.getEtatCivile(), oldData.getFonctionId(), oldData.getGenre(), oldData.getId(), oldData.getLevelId(), oldData.getMatricule(), 
-				oldData.getMatriculeInss(), oldData.getNom(), oldData.getNombreDenfant(), oldData.getPrenom(), oldData.getSalaireDeBase(), oldData.getServiceId(), oldData.getTelephone(), 
+		employesRepositorie.createIntoBuckup(oldData.getAgence(), oldData.getAnneeNaissance(), 
+				oldData.getBanque(), oldData.getCategorie(), oldData.getCompte(), oldData.getConjointFonction(), oldData.getDateCreated(), oldData.getDateEmbauche(), 
+				oldData.getDateModified(), oldData.getEmail(), oldData.getEtat(), oldData.getEtatCivile(), oldData.getFonction(), oldData.getGenre(), oldData.getId(), oldData.getLevel(), oldData.getMatricule(), 
+				oldData.getMatriculeInss(), oldData.getNom(), oldData.getNombreDenfant(), oldData.getPrenom(), oldData.getSalaireDeBase(), oldData.getService(), oldData.getTelephone(), 
 				oldData.getUserCreated(), oldData.getUserModified(), oldData.getVersion(), miseAjour);
 		employesRepositorie.deleteById(id);
 	}
@@ -110,10 +110,10 @@ public class EmployeService {
 		for (Iterator<Employe> iterator = employes.iterator(); iterator.hasNext();) {
 			Employe employe = (Employe) iterator.next();
 			String miseAjour = "Delete";
-			employesRepositorie.createIntoBuckup(employe.getAgenceId(), employe.getAnneeNaissance(), 
-					employe.getBanqueId(), employe.getCategorieId(), employe.getCompte(), employe.getConjointFonction(), employe.getDateCreated(), employe.getDateEmbauche(), 
-					employe.getDateModified(), employe.getEmail(), employe.getEtat(), employe.getEtatCivile(), employe.getFonctionId(), employe.getGenre(), employe.getId(), employe.getLevelId(), employe.getMatricule(), 
-					employe.getMatriculeInss(), employe.getNom(), employe.getNombreDenfant(), employe.getPrenom(), employe.getSalaireDeBase(), employe.getServiceId(), employe.getTelephone(), 
+			employesRepositorie.createIntoBuckup(employe.getAgence(), employe.getAnneeNaissance(), 
+					employe.getBanque(), employe.getCategorie(), employe.getCompte(), employe.getConjointFonction(), employe.getDateCreated(), employe.getDateEmbauche(), 
+					employe.getDateModified(), employe.getEmail(), employe.getEtat(), employe.getEtatCivile(), employe.getFonction(), employe.getGenre(), employe.getId(), employe.getLevel(), employe.getMatricule(), 
+					employe.getMatriculeInss(), employe.getNom(), employe.getNombreDenfant(), employe.getPrenom(), employe.getSalaireDeBase(), employe.getService(), employe.getTelephone(), 
 					employe.getUserCreated(), employe.getUserModified(), employe.getVersion(), miseAjour);
 		}
 		employesRepositorie.deleteAllById(ids);
@@ -121,10 +121,10 @@ public class EmployeService {
 	
 	public Employe miseApiedEmploye(int idEmploye) {
 		Employe oldData = employesRepositorie.findById(idEmploye).orElse(null);
-		employesRepositorie.createIntoBuckup(oldData.getAgenceId(), oldData.getAnneeNaissance(), 
-				oldData.getBanqueId(), oldData.getCategorieId(), oldData.getCompte(), oldData.getConjointFonction(), oldData.getDateCreated(), oldData.getDateEmbauche(), 
-				oldData.getDateModified(), oldData.getEmail(), oldData.getEtat(), oldData.getEtatCivile(), oldData.getFonctionId(), oldData.getGenre(), oldData.getId(), oldData.getLevelId(), oldData.getMatricule(), 
-				oldData.getMatriculeInss(), oldData.getNom(), oldData.getNombreDenfant(), oldData.getPrenom(), oldData.getSalaireDeBase(), oldData.getServiceId(), oldData.getTelephone(), 
+		employesRepositorie.createIntoBuckup(oldData.getAgence(), oldData.getAnneeNaissance(), 
+				oldData.getBanque(), oldData.getCategorie(), oldData.getCompte(), oldData.getConjointFonction(), oldData.getDateCreated(), oldData.getDateEmbauche(), 
+				oldData.getDateModified(), oldData.getEmail(), oldData.getEtat(), oldData.getEtatCivile(), oldData.getFonction(), oldData.getGenre(), oldData.getId(), oldData.getLevel(), oldData.getMatricule(), 
+				oldData.getMatriculeInss(), oldData.getNom(), oldData.getNombreDenfant(), oldData.getPrenom(), oldData.getSalaireDeBase(), oldData.getService(), oldData.getTelephone(), 
 				oldData.getUserCreated(), oldData.getUserModified(), oldData.getVersion(), "Mise a pied");
 		  oldData.setEtat(1);
 		return employesRepositorie.save(oldData);

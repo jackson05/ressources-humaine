@@ -58,7 +58,7 @@ public class EmployeController {
 		employeService.deleteListEmploye(ids);
 	}
 	
-	@RequestMapping("/employe/mp/{id}")
+	@RequestMapping(value = "/employe/mp/{id}", method = RequestMethod.PUT)
 	public Employe miseApied(@PathVariable int id) {
 		return employeService.miseApiedEmploye(id);
 	}

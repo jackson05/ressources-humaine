@@ -9,17 +9,17 @@ import javax.persistence.Id;
 @Entity
 public class EmployeBuckup {
 	@Id()
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_buckup;
 	private int id;
 	private String matricule;
 	private String nom;
 	private String prenom;
-	private int anneeNaissance;
+	private int anneeNaissance; 
 	
 	private String genre;
-	private String etatCivile; 
-	
+	private String etatCivile;
+	@Column(name="level_id", columnDefinition="int(11) NULL default '0'")
 	private int levelId;
 	private String conjointFonction;
 	
@@ -30,11 +30,16 @@ public class EmployeBuckup {
 	
 	private float salaireDeBase;
 	
+	@Column(name="service_id", columnDefinition="int(11) NULL default '0'")
 	private int serviceId;
-	private int fonctionId;
+	@Column(name="agence_id", columnDefinition="int(11) NULL default '0'")
 	private int agenceId;
+	@Column(name="fonction_id", columnDefinition="int(11) NULL default '0'")
+	private int fonctionId; 
+	@Column(name="categorie_id", columnDefinition="int(11) NULL default '0'")
 	private int categorieId;
 	
+	@Column(name="banque_id", columnDefinition="int(11) NULL default '0'")
 	private int banqueId;
 	private String compte;
 	private String dateEmbauche;

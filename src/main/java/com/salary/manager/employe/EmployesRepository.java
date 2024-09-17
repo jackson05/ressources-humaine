@@ -9,6 +9,13 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import com.salary.manager.agences.Agence;
+import com.salary.manager.banque.Banque;
+import com.salary.manager.categorie.Categorie;
+import com.salary.manager.fonction.Fonction;
+import com.salary.manager.level.Level;
+import com.salary.manager.service.Services;
  
 
 @Repository
@@ -30,11 +37,11 @@ public interface EmployesRepository extends JpaRepository<Employe, Integer> {
 			+ ":date_embauche, :date_modified, :email, :etat, :etat_civile, :fonction_id, :genre, :id, :level_id, :matricule,"
 			+ " :matricule_inss, :nom, :nombre_denfant, :prenom, :salaire_de_base, :service_id, :telephone, :user_created,"
 			+ " :user_modified, :version, :operation)", nativeQuery = true)
-	void createIntoBuckup(@Param("agence_id") int agenceId, @Param("annee_naissance") int anneeNaissance, @Param("banque_id") int banqueId, @Param("categorie_id") int categorieId,
+	void createIntoBuckup(@Param("agence_id") Agence agence, @Param("annee_naissance") int anneeNaissance, @Param("banque_id") Banque banque, @Param("categorie_id") Categorie categorie,
 			@Param("compte") String compte, @Param("conjoint_fonction") String conjointFonction, @Param("date_created") String dateCreated,@Param("date_embauche") String dateEmbauche, @Param("date_modified") String dateModified,
-			@Param("email") String email, @Param("etat") int etat, @Param("etat_civile") String etatCivile, @Param("fonction_id") int fonctionId, @Param("genre") String genre, @Param("id") int id, 
-			@Param("level_id") int levelId, @Param("matricule") String matricule,@Param("matricule_inss") String matriculeInss, @Param("nom") String nom, @Param("nombre_denfant") int nombreDenfant, 
-			@Param("prenom") String prenom, @Param("salaire_de_base") float salaireDeBase, @Param("service_id") int serviceId, @Param("telephone") String telephone, @Param("user_created") int userCreated, 
+			@Param("email") String email, @Param("etat") int etat, @Param("etat_civile") String etatCivile, @Param("fonction_id") Fonction fonction, @Param("genre") String genre, @Param("id") int id, 
+			@Param("level_id") Level level, @Param("matricule") String matricule,@Param("matricule_inss") String matriculeInss, @Param("nom") String nom, @Param("nombre_denfant") int nombreDenfant, 
+			@Param("prenom") String prenom, @Param("salaire_de_base") float salaireDeBase, @Param("service_id") Services serviceId, @Param("telephone") String telephone, @Param("user_created") int userCreated, 
 			@Param("user_modified") int userModified, @Param("version") int version, @Param("operation") String operation);
 	
 	@Query(value = "SELECT * FROM employe WHERE anneeNaissance >= :anneeNaissance", nativeQuery = true)

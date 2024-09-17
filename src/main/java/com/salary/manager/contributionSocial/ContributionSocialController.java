@@ -20,13 +20,13 @@ public class ContributionSocialController {
 		return contributionSocialService.getAllContributionSocial();
 	}
 	
-	@RequestMapping(value = "/contributionsocial/{id}", method = RequestMethod.GET)
-	public ContributionSocial getDataById (int id){
+	@RequestMapping(value = "/contributionsocial/id/{id}", method = RequestMethod.GET)
+	public ContributionSocial getDataById (@PathVariable int id){
 		return contributionSocialService.getContributionSocialById(id);
 	}
 	
-	@RequestMapping(value = "/contributionsocial/{name}", method = RequestMethod.GET)
-	public ContributionSocial getDataByName (String name){
+	@RequestMapping(value = "/contributionsocial/name/{name}", method = RequestMethod.GET)
+	public ContributionSocial getDataByName (@PathVariable String name){
 		return contributionSocialService.getContributionSocialByDesignation(name);
 	}
 	
